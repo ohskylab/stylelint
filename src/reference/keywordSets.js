@@ -54,30 +54,6 @@ export const colorFunctionNames = new Set([
   "gray",
 ])
 
-export const fontFamilyKeywords = new Set([
-  "inherit",
-  "unset",
-  "serif",
-  "sans-serif",
-  "cursive",
-  "fantasy",
-  "monospace",
-])
-
-export const fontWeightRelativeKeywords = new Set([
-  "bolder",
-  "lighter",
-])
-
-export const fontWeightAbsoluteKeywords = new Set([
-  "bold",
-])
-
-export const fontWeightKeywords = new Set([
-  ...fontWeightRelativeKeywords,
-  ...fontWeightAbsoluteKeywords,
-])
-
 export const camelCaseFunctionNames = new Set([
   "translateX",
   "translateY",
@@ -92,17 +68,21 @@ export const camelCaseFunctionNames = new Set([
   "skewY",
 ])
 
+export const basicKeywords = new Set([
+  "unset",
+  "initial",
+  "inherit",
+])
+
 // cf. https://developer.mozilla.org/en-US/docs/Web/CSS/animation
 export const animationShorthandKeywords = new Set([
+  ...basicKeywords,
   "infinite",
   "normal",
   "reverse",
   "alternate",
   "alternate-reverse",
   "none",
-  "initial",
-  "inherit",
-  "unset",
   "forwards",
   "backwards",
   "both",
@@ -118,10 +98,8 @@ export const animationShorthandKeywords = new Set([
 ])
 
 export const animationNameKeywords = new Set([
+  ...basicKeywords,
   "none",
-  "initial",
-  "inherit",
-  "unset",
 ])
 
 // These are the ones that can have single-colon notation
@@ -234,36 +212,32 @@ export const camelCaseKeywords = new Set([
 
 // https://developer.mozilla.org/docs/Web/CSS/counter-increment
 export const counterIncrementKeywords = new Set([
+  ...basicKeywords,
   "none",
-  "inherit",
-  "initial",
-  "unset",
 ])
 
 export const gridRowKeywords = new Set([
+  ...basicKeywords,
   "auto",
   "span",
 ])
 
 export const gridColumnKeywords = new Set([
+  ...basicKeywords,
   "auto",
   "span",
 ])
 
 export const gridAreaKeywords = new Set([
-  "unset",
-  "initial",
-  "inherit",
+  ...basicKeywords,
   "auto",
   "span",
 ])
 
 // https://developer.mozilla.org/ru/docs/Web/CSS/list-style-type
 export const listStyleTypeKeywords = new Set([
+  ...basicKeywords,
   "none",
-  "unset",
-  "initial",
-  "inherit",
   "disc",
   "circle",
   "square",
@@ -326,4 +300,106 @@ export const listStyleTypeKeywords = new Set([
   "hangul",
   "hangul-consonant",
   "urdu",
+])
+
+export const fontStyleKeywords = new Set([
+  ...basicKeywords,
+  "normal",
+  "italic",
+  "oblique",
+])
+
+export const fontVariantKeywords = new Set([
+  ...basicKeywords,
+  "normal",
+  "none",
+  "historical-forms",
+  "none",
+  "common-ligatures",
+  "no-common-ligatures",
+  "discretionary-ligatures",
+  "no-discretionary-ligatures",
+  "historical-ligatures",
+  "no-historical-ligatures",
+  "contextual",
+  "no-contextual",
+  "small-caps",
+  "small-caps",
+  "all-small-caps",
+  "petite-caps",
+  "all-petite-caps",
+  "unicase",
+  "titling-caps",
+  "lining-nums",
+  "oldstyle-nums",
+  "proportional-nums",
+  "tabular-nums",
+  "diagonal-fractions",
+  "stacked-fractions",
+  "ordinal",
+  "slashed-zero",
+  "jis78",
+  "jis83",
+  "jis90",
+  "jis04",
+  "simplified",
+  "traditional",
+  "full-width",
+  "proportional-width",
+  "ruby",
+])
+
+export const fontWeightRelativeKeywords = new Set([
+  "bolder",
+  "lighter",
+])
+
+export const fontWeightAbsoluteKeywords = new Set([
+  "bold",
+  "normal",
+])
+
+export const fontWeightKeywords = new Set([
+  ...basicKeywords,
+  ...fontWeightRelativeKeywords,
+  ...fontWeightAbsoluteKeywords,
+])
+
+export const fontStretchKeywords = new Set([
+  ...basicKeywords,
+  "semi-condensed",
+  "condensed",
+  "extra-condensed",
+  "ultra-condensed",
+  "semi-expanded",
+  "expanded",
+  "extra-expanded",
+  "ultra-expanded",
+])
+
+export const fontSizeKeywords = new Set([
+  ...basicKeywords,
+  "xx-small",
+  "x-small",
+  "small",
+  "medium",
+  "large",
+  "x-large",
+  "xx-large",
+  "larger",
+  "smaller",
+])
+
+export const lineHeightKeywords = new Set([
+  ...basicKeywords,
+  "normal",
+])
+
+export const fontFamilyKeywords = new Set([
+  ...basicKeywords,
+  "serif",
+  "sans-serif",
+  "cursive",
+  "fantasy",
+  "monospace",
 ])
